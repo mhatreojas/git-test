@@ -1,0 +1,41 @@
+*{
+    padding:0%;
+    margin:0%;
+    color:antiquewhite;
+}
+
+#navbar{
+position: fixed;
+
+    height:60px;
+    background-color:#0f1111 ;
+
+}
+#amazon{
+    color: #f0880f;
+    font-size: 25px;
+}
+button{
+    background-color: #f0880f;
+}
+a{
+    margin-right: 200px;
+}
+.content{
+    height: 100px;
+    width: 100px;
+    border-width: 2px;
+    border-style:solid;
+    border-color: black;
+    display: inline-block;
+}
+footer{
+    color: white;
+    background-color: black;
+    text-align: center;
+    
+
+}
+#all{
+    height: 600px;
+}

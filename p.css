@@ -1,0 +1,12 @@
+div{
+color: White;
+background-color: Black;
+  position: fixed;
+    
+}
+footer{
+    color: White;
+background-color: Black;
+position: static;
+top: 1600px;
+}

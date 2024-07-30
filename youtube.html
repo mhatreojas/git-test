@@ -1,0 +1,337 @@
+/**
+ * v0 by Vercel.
+ * @see https://v0.dev/t/BUIbQwTS0OU
+ * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
+ */
+import Link from "next/link"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem } from "@/components/ui/dropdown-menu"
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import { Slider } from "@/components/ui/slider"
+
+export default function Component() {
+  return (
+    <div className="flex flex-col h-screen">
+      <header className="bg-background border-b shadow-sm sticky top-0 z-10">
+        <div className="container px-4 md:px-6 flex items-center h-14">
+          <Link href="#" className="flex items-center gap-2" prefetch={false}>
+            <YoutubeIcon className="w-6 h-6 text-primary" />
+            <span className="font-bold text-lg">YouTube</span>
+          </Link>
+          <div className="relative flex-1 max-w-md mx-6">
+            <Input type="search" placeholder="Search" className="w-full rounded-full bg-muted pl-8 pr-12 py-2" />
+            <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+            <Button variant="ghost" size="icon" className="absolute right-3 top-1/2 -translate-y-1/2">
+              <MicIcon className="w-4 h-4" />
+            </Button>
+          </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" className="ml-auto">
+                <Avatar className="w-8 h-8">
+                  <AvatarImage src="/placeholder-user.jpg" />
+                  <AvatarFallback>JD</AvatarFallback>
+                </Avatar>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuLabel>John Doe</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Your Channel</DropdownMenuItem>
+              <DropdownMenuItem>YouTube Studio</DropdownMenuItem>
+              <DropdownMenuItem>Settings</DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Sign out</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+      </header>
+      <div className="flex-1 grid grid-cols-[1fr_300px]">
+        <div className="flex flex-col">
+          <div className="aspect-video relative">
+            <video
+              className="w-full h-full object-cover"
+              src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+              controls
+            />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-4 flex items-center justify-between">
+              <div className="flex items-center gap-2 text-white">
+                <Button variant="ghost" size="icon" className="w-8 h-8">
+                  <PlayIcon className="w-5 h-5" />
+                </Button>
+                <Button variant="ghost" size="icon" className="w-8 h-8">
+                  <Volume2Icon className="w-5 h-5" />
+                </Button>
+                <Slider
+                  className="flex-1 [&>span:first-child]:h-1 [&>span:first-child]:bg-white/30 [&_[role=slider]]:bg-white [&_[role=slider]]:w-3 [&_[role=slider]]:h-3 [&_[role=slider]]:border-0 [&>span:first-child_span]:bg-white [&_[role=slider]:focus-visible]:ring-0 [&_[role=slider]:focus-visible]:ring-offset-0 [&_[role=slider]:focus-visible]:scale-105 [&_[role=slider]:focus-visible]:transition-transform"
+                  defaultValue={[40]}
+                />
+                <Button variant="ghost" size="icon" className="w-8 h-8">
+                  <MaximizeIcon className="w-5 h-5" />
+                </Button>
+              </div>
+              <div className="text-white text-sm">1:20 / 3:45</div>
+            </div>
+          </div>
+          <div className="p-4 space-y-4">
+            <h1 className="text-2xl font-bold">
+              World of Warcraft: Shadowlands - Chains of Domination Patch 9.1 Trailer (2021)
+            </h1>
+            <div className="flex items-center gap-2">
+              <Avatar className="w-8 h-8">
+                <AvatarImage src="/placeholder-user.jpg" />
+                <AvatarFallback>JD</AvatarFallback>
+              </Avatar>
+              <div>
+                <div className="font-medium">Blizzard Entertainment</div>
+                <div className="text-sm text-muted-foreground">1.2M subscribers</div>
+              </div>
+              <Button variant="outline" size="sm" className="ml-auto">
+                Subscribe
+              </Button>
+            </div>
+            <div className="prose text-muted-foreground">
+              <p>
+                The Chains of Domination update for World of Warcraft: Shadowlands is here! Join the Covenants as they
+                venture into the Sanctum of Domination and confront the Jailer's forces.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="border-l bg-muted/40 overflow-auto">
+          <div className="sticky top-0 bg-background p-4 border-b">
+            <h2 className="text-lg font-bold">Suggested Videos</h2>
+          </div>
+          <div className="grid gap-4 p-4">
+            <Link href="#" className="flex gap-3 items-start" prefetch={false}>
+              <img
+                src="/placeholder.svg"
+                width={120}
+                height={90}
+                alt="Thumbnail"
+                className="rounded-md object-cover aspect-[4/3]"
+              />
+              <div className="space-y-1">
+                <h3 className="font-medium line-clamp-2">Vercel Ship Keynote: Introducing the frontend cloud</h3>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Avatar className="w-5 h-5">
+                    <AvatarImage src="/placeholder-user.jpg" />
+                    <AvatarFallback>JD</AvatarFallback>
+                  </Avatar>
+                  <div className="line-clamp-1">Vercel</div>
+                </div>
+              </div>
+            </Link>
+            <Link href="#" className="flex gap-3 items-start" prefetch={false}>
+              <img
+                src="/placeholder.svg"
+                width={120}
+                height={90}
+                alt="Thumbnail"
+                className="rounded-md object-cover aspect-[4/3]"
+              />
+              <div className="space-y-1">
+                <h3 className="font-medium line-clamp-2">Introducing Vercel Edge Functions</h3>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Avatar className="w-5 h-5">
+                    <AvatarImage src="/placeholder-user.jpg" />
+                    <AvatarFallback>JD</AvatarFallback>
+                  </Avatar>
+                  <div className="line-clamp-1">Vercel</div>
+                </div>
+              </div>
+            </Link>
+            <Link href="#" className="flex gap-3 items-start" prefetch={false}>
+              <img
+                src="/placeholder.svg"
+                width={120}
+                height={90}
+                alt="Thumbnail"
+                className="rounded-md object-cover aspect-[4/3]"
+              />
+              <div className="space-y-1">
+                <h3 className="font-medium line-clamp-2">Vercel Serverless Functions: A Beginner's Guide</h3>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Avatar className="w-5 h-5">
+                    <AvatarImage src="/placeholder-user.jpg" />
+                    <AvatarFallback>JD</AvatarFallback>
+                  </Avatar>
+                  <div className="line-clamp-1">Vercel</div>
+                </div>
+              </div>
+            </Link>
+            <Link href="#" className="flex gap-3 items-start" prefetch={false}>
+              <img
+                src="/placeholder.svg"
+                width={120}
+                height={90}
+                alt="Thumbnail"
+                className="rounded-md object-cover aspect-[4/3]"
+              />
+              <div className="space-y-1">
+                <h3 className="font-medium line-clamp-2">Vercel Serverless Functions: A Beginner's Guide</h3>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Avatar className="w-5 h-5">
+                    <AvatarImage src="/placeholder-user.jpg" />
+                    <AvatarFallback>JD</AvatarFallback>
+                  </Avatar>
+                  <div className="line-clamp-1">Vercel</div>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function MaximizeIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M8 3H5a2 2 0 0 0-2 2v3" />
+      <path d="M21 8V5a2 2 0 0 0-2-2h-3" />
+      <path d="M3 16v3a2 2 0 0 0 2 2h3" />
+      <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
+    </svg>
+  )
+}
+
+
+function MicIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+      <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+      <line x1="12" x2="12" y1="19" y2="22" />
+    </svg>
+  )
+}
+
+
+function PlayIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polygon points="6 3 20 12 6 21 6 3" />
+    </svg>
+  )
+}
+
+
+function SearchIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="11" cy="11" r="8" />
+      <path d="m21 21-4.3-4.3" />
+    </svg>
+  )
+}
+
+
+function Volume2Icon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+    </svg>
+  )
+}
+
+
+function XIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
+    </svg>
+  )
+}
+
+
+function YoutubeIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+      <path d="m10 15 5-3-5-3z" />
+    </svg>
+  )
+}
